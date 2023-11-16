@@ -23,25 +23,23 @@ public class SistemaLivroService {
     }
 
     public boolean existeNomeLivro(String nomeLivro){
+
         return sistemaLivrosRepository.existeNomeLivro(nomeLivro);
     }
 
-    public boolean existeNomeAutor(String autor){
-        return sistemaLivrosRepository.existeNomeAutor(autor);
+    public List<SistemaLivrosModel> findAll(){
+
+        return sistemaLivrosRepository.findAll();
+    }
+
+    public Optional<SistemaLivrosModel> findById(UUID id) {
+
+        return sistemaLivrosRepository.findById(id);
     }
 
     @Transactional
     public void delete(SistemaLivrosModel sistemaLivrosModel) {
         sistemaLivrosRepository.delete(sistemaLivrosModel);
     }
-
-    public List<SistemaLivrosModel> findAll(){
-        return sistemaLivrosRepository.findAll();
-    }
-
-    public Optional<SistemaLivrosModel> findById(UUID id) {
-        return sistemaLivrosRepository.findById(id);
-    }
-
 
 }
