@@ -10,7 +10,6 @@ import lombok.Data;
 public class SistemaLivrosDTO {
 
     @NotBlank
-    @Size(max = 7)
     private String nomeLivro;
 
     @NotBlank

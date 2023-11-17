@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class SistemaLivroService {
@@ -32,13 +31,14 @@ public class SistemaLivroService {
         return sistemaLivrosRepository.findAll();
     }
 
-    public Optional<SistemaLivrosModel> findById(UUID id) {
+    public Optional<SistemaLivrosModel> findById(Long id) {
 
         return sistemaLivrosRepository.findById(id);
     }
 
     @Transactional
     public void delete(SistemaLivrosModel sistemaLivrosModel) {
+
         sistemaLivrosRepository.delete(sistemaLivrosModel);
     }
 

@@ -15,13 +15,13 @@ public class SistemaLivrosModel implements Serializable {
     private static final long serialVersionUID = 1l;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO) //ID gerado por forma automatica geneationtyp auto
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //ID gerado por forma automatica geneationtyp auto
+    private Long id;
 
-    @Column(nullable = false, unique = true, length = 10)
+    @Column
     private String nomeLivro;
 
-    @Column(nullable = false, unique = true, length = 7)
+    @Column
     private String autor;
 
 }
