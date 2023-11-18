@@ -51,7 +51,7 @@ public class SistemaLivrosController {
             }
             return ResponseEntity.status(HttpStatus.OK).body(sistemaLivrosModelOptional.get());
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao buscar o livro.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao buscar Id.");
         }
     }
 
