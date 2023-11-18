@@ -1,7 +1,9 @@
 package com.api.LivrosPoo.Controllers;
 
 
+import com.api.LivrosPoo.DTOS.LivrosWrapperDTO;
 import com.api.LivrosPoo.DTOS.SistemaLivrosDTO;
+import com.api.LivrosPoo.Excecoes.IDNotFoundException;
 import com.api.LivrosPoo.Models.SistemaLivrosModel;
 import com.api.LivrosPoo.Service.SistemaLivroService;
 import jakarta.validation.Valid;
@@ -38,8 +40,14 @@ public class SistemaLivrosController {
     }
 
     @GetMapping("/todos")
-    public ResponseEntity<List<SistemaLivrosModel>> getTodosLivros() {
-        return ResponseEntity.status(HttpStatus.OK).body(sistemaLivroService.findAll());
+    public ResponseEntity<Object> getTodosLivros() {
+        try {
+            List<SistemaLivrosModel> livros = sistemaLivroService.findAll();
+            LivrosWrapperDTO wrapperDTO = new LivrosWrapperDTO(livros);
+            return ResponseEntity.status(HttpStatus.OK).body(wrapperDTO);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao obter todos os livros: " + e.getMessage());
+        }
     }
 
     @GetMapping("/{id}")
@@ -47,7 +55,7 @@ public class SistemaLivrosController {
         try {
             Optional<SistemaLivrosModel> sistemaLivrosModelOptional = sistemaLivroService.findById(id);
             if (!sistemaLivrosModelOptional.isPresent()) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Id não encontrado.");
+                throw new IDNotFoundException("Id não encontrado.");
             }
             return ResponseEntity.status(HttpStatus.OK).body(sistemaLivrosModelOptional.get());
         } catch (Exception e) {
@@ -60,7 +68,7 @@ public class SistemaLivrosController {
         try {
             Optional<SistemaLivrosModel> sistemaLivrosModelOptional = sistemaLivroService.findById(id);
             if (!sistemaLivrosModelOptional.isPresent()) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Livro não encontrado.");
+                throw new IDNotFoundException("Id não encontrado.");
             }
             sistemaLivroService.delete(sistemaLivrosModelOptional.get());
             return ResponseEntity.status(HttpStatus.OK).body("Livro deletado com sucesso.");
