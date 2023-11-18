@@ -7,21 +7,15 @@ import com.api.LivrosPoo.Service.SistemaLivroService;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
+
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 3600) //permite que acesse de qualquer fonte
 @RequestMapping("/SistemaLivros")
 public class SistemaLivrosController {
 
@@ -53,7 +47,7 @@ public class SistemaLivrosController {
         try {
             Optional<SistemaLivrosModel> sistemaLivrosModelOptional = sistemaLivroService.findById(id);
             if (!sistemaLivrosModelOptional.isPresent()) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Livro não encontrado.");
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Id não encontrado.");
             }
             return ResponseEntity.status(HttpStatus.OK).body(sistemaLivrosModelOptional.get());
         } catch (Exception e) {
@@ -76,8 +70,7 @@ public class SistemaLivrosController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Object> updateLivros(@PathVariable(value = "id") Long id,
-                                               @RequestBody @Valid SistemaLivrosDTO sistemaLivrosDto) {
+    public ResponseEntity<Object> updateLivros(@PathVariable(value = "id") Long id, @RequestBody @Valid SistemaLivrosDTO sistemaLivrosDto) {
         try {
             Optional<SistemaLivrosModel> sistemaLivrosModelOptional = sistemaLivroService.findById(id);
             if (!sistemaLivrosModelOptional.isPresent()) {

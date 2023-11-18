@@ -4,18 +4,17 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.UUID;
 
 //classe que faz mapeamento para o jpa criar as tabelas no banco de dados
 
 @Data
 @Entity
-@Table (name = "TB_SISTEMA_LIVROS")
+@Table(name = "TB_SISTEMA_LIVROS")
 public class SistemaLivrosModel implements Serializable {
     private static final long serialVersionUID = 1l;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //ID gerado por forma automatica geneationtyp auto
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
