@@ -1,7 +1,6 @@
 package com.api.LivrosPoo.Controllers;
 
 
-import com.api.LivrosPoo.DTOS.LivrosWrapperDTO;
 import com.api.LivrosPoo.DTOS.SistemaLivrosDTO;
 import com.api.LivrosPoo.Excecoes.IDNotFoundException;
 import com.api.LivrosPoo.Models.SistemaLivrosModel;
@@ -40,14 +39,8 @@ public class SistemaLivrosController {
     }
 
     @GetMapping("/todos")
-    public ResponseEntity<Object> getTodosLivros() {
-        try {
-            List<SistemaLivrosModel> livros = sistemaLivroService.findAll();
-            LivrosWrapperDTO wrapperDTO = new LivrosWrapperDTO(livros);
-            return ResponseEntity.status(HttpStatus.OK).body(wrapperDTO);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao obter todos os livros: " + e.getMessage());
-        }
+    public ResponseEntity<List<SistemaLivrosModel>> getTodosLivros() {
+        return ResponseEntity.status(HttpStatus.OK).body(sistemaLivroService.findAll());
     }
 
     @GetMapping("/{id}")
