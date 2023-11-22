@@ -47,3 +47,4 @@ Objeto de transferência de dados (DTO) que contém informações necessárias p
 Construtor que recebe uma mensagem como parâmetro, a qual será utilizada para descrever a exceção. Ao ser lançada, esta exceção fornecerá informações contextualizadas sobre o motivo da não localização do ID.
 
 ## Funcionalidade ⚙️
+
