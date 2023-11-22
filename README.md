@@ -52,31 +52,31 @@ Construtor que recebe uma mensagem como parâmetro, a qual será utilizada para 
 - O método `saveLivros` faz a criação de novos livros no sistema, através do endpoint `/inserir`. 
 #### JSON: `{"nameLivro": "", "autor": ""}`
 ### Exemplo de seveLivros
-![Alt text](imagens/POST.png)
+![Alt text](src\main\java\com\api\LivrosPoo\imagens\POST.png)
 #### ERRO: Ao tentar adicionar um livro com o mesmo titulo, ele retorna uma exceção.
-![Alt text](imagens/livrojaexiste.png)
+![Alt text](src\main\java\com\api\LivrosPoo\imagens\livrojaexiste.png)
 
 ### GET:
 - O metodo `getTodos` e `getUmLivro` retorna a lista já salva de livros adicionados.
     - `/todos:` Retorna todos os livros em uma lista.
-  ![Alt text](imagens/gettodos.png)
+  ![Alt text](src\main\java\com\api\LivrosPoo\imagens\gettodos.png)
     - `/{id}:` Retorna o livro de acordo com seu id específico.
-  ![Alt text](imagens/getid.png)
+  ![Alt text](src\main\java\com\api\LivrosPoo\imagens\get id.png)
 #### ERRO: Caso seja pesquisado um id que não existe, ele retorna uma exceção:
-![Alt text](imagens/erroid.png)
+![Alt text](src\main\java\com\api\LivrosPoo\imagens\erroid.png)
 
 ### PUT:
 - O método `updateLivros` faz a atualização de informações caso necessárias.
 #### Atualizar Livros
-![Alt text](imagens/put.png)
+![Alt text](src\main\java\com\api\LivrosPoo\imagens\put.png)
 #### Erro: Tentar atualizar um livro com id que não exite:
-![Alt text](imagens/putid.png)
+![Alt text](src\main\java\com\api\LivrosPoo\imagens\putid.png)
 
 #### DELETE:
 - O metodo `deleteLivro` faz a exclusão de livros e autores existentes na base de dados.
     - `/{id}:` Exclui com base no id informado.
-![Alt text](imagens/delete.png)
+![Alt text](src\main\java\com\api\LivrosPoo\imagens\delete.png)
 #### ERRO: Ao tentar apagar um id não existente, recebe uma exceção:
-![Alt text](errodelte.png)
+![Alt text](src\main\java\com\api\LivrosPoo\imagens\errodelte.png)
 
 
