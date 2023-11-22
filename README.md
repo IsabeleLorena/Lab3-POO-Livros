@@ -52,31 +52,31 @@ Construtor que recebe uma mensagem como parâmetro, a qual será utilizada para 
 - O método `saveLivros` faz a criação de novos livros no sistema, através do endpoint `/inserir`. 
 #### JSON: `{"nameLivro": "", "autor": ""}`
 ### Exemplo de seveLivros
-![Alt text](images/POST.png)
+![Alt text](imagens/POST.png)
 #### ERRO: Ao tentar adicionar um livro com o mesmo titulo, ele retorna uma exceção.
-![Alt text](images/livrojaexiste.png)
+![Alt text](imagens/livrojaexiste.png)
 
 ### GET:
 - O metodo `getTodos` e `getUmLivro` retorna a lista já salva de livros adicionados.
     - `/todos:` Retorna todos os livros em uma lista.
   ![Alt text](imagens/gettodos.png)
     - `/{id}:` Retorna o livro de acordo com seu id específico.
-  ![Alt text](images/getid.png)
+  ![Alt text](imagens/getid.png)
 #### ERRO: Caso seja pesquisado um id que não existe, ele retorna uma exceção:
-![Alt text](images/erroid.png)
+![Alt text](imagens/erroid.png)
 
 ### PUT:
 - O método `updateLivros` faz a atualização de informações caso necessárias.
 #### Atualizar Livros
-![Alt text](images/put.png)
+![Alt text](imagens/put.png)
 #### Erro: Tentar atualizar um livro com id que não exite:
-![Alt text](images/putid.png)
+![Alt text](imagens/putid.png)
 
 #### DELETE:
 - O metodo `deleteLivro` faz a exclusão de livros e autores existentes na base de dados.
     - `/{id}:` Exclui com base no id informado.
-![Alt text](images/delete.png)
+![Alt text](imagens/delete.png)
 #### ERRO: Ao tentar apagar um id não existente, recebe uma exceção:
-![Alt text](images/errodelte.png)
+![Alt text](errodelte.png)
 
 
