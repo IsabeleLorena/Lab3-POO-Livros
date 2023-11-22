@@ -47,4 +47,36 @@ Objeto de transferência de dados (DTO) que contém informações necessárias p
 Construtor que recebe uma mensagem como parâmetro, a qual será utilizada para descrever a exceção. Ao ser lançada, esta exceção fornecerá informações contextualizadas sobre o motivo da não localização do ID.
 
 ## Funcionalidade ⚙️
+### CRUD:
+### POST:
+- O método `saveLivros` faz a criação de novos livros no sistema, através do endpoint `/inserir`. 
+#### JSON: `{"nameLivro": "", "autor": ""}`
+### Exemplo de seveLivros
+![Alt text](images/POST.png)
+#### ERRO: Ao tentar adicionar um livro com o mesmo titulo, ele retorna uma exceção.
+![Alt text](images/livrojaexiste.png)
+
+### GET:
+- O metodo `getTodos` e `getUmLivro` retorna a lista já salva de livros adicionados.
+    - `/todos:` Retorna todos os livros em uma lista.
+  ![Alt text](imagens/gettodos.png)
+    - `/{id}:` Retorna o livro de acordo com seu id específico.
+  ![Alt text](images/getid.png)
+#### ERRO: Caso seja pesquisado um id que não existe, ele retorna uma exceção:
+![Alt text](images/erroid.png)
+
+### PUT:
+- O método `updateLivros` faz a atualização de informações caso necessárias.
+#### Atualizar Livros
+![Alt text](images/put.png)
+#### Erro: Tentar atualizar um livro com id que não exite:
+![Alt text](images/putid.png)
+
+#### DELETE:
+- O metodo `deleteLivro` faz a exclusão de livros e autores existentes na base de dados.
+    - `/{id}:` Exclui com base no id informado.
+![Alt text](images/delete.png)
+#### ERRO: Ao tentar apagar um id não existente, recebe uma exceção:
+![Alt text](images/errodelte.png)
+
 
