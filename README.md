@@ -17,7 +17,7 @@ Este projeto visa oferecer aos usuários a funcionalidade de gerenciar uma bibli
 ## Tecnologias Empregadas 🖥️
 - `Linguagem de Programação:` Java <img align="center" alt="Rafa-Spri" height="50" width="70" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" />
 - `Framework:` Spring Boot   <img align="center" alt="Rafa-Spri" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" >
-- `Banco de Dados:` Postgrest <img align="center" alt="Rafa-Spri" height="40" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
+- `Banco de Dados:` PostgreSQL <img align="center" alt="Rafa-Spri" height="40" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
 
 ## Arquitetura 📝
 A arquitetura do projeto segue os princípios da Programação Orientada a Objetos (POO), organizando o código em classes e módulos distintos. A estrutura é composta por controladores, serviços, modelos e classes de exceção, cada um desempenhando um papel específico no funcionamento da aplicação.
