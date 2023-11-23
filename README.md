@@ -5,10 +5,10 @@ Este projeto visa oferecer aos usuários a funcionalidade de gerenciar uma bibli
 
 
 ### Funcionalidades Principais ⚙️
-- `Inserir Livros:` Permite a inclusão de informações de Notas Fiscais, ampliando o banco de dados durante a execução do servidor.
-- `Atualizar informações:` Possibilita a manipulação dos dados armazenados, oferecendo recursos para análise e processamento eficiente.
-- `Excluir Livros:` Permite a atualização ou exclusão de informações de Notas Fiscais específicas, conferindo flexibilidade na gestão de dados.
-- `Buscar Livros:` Oferece funcionalidade de autenticação para garantir a integridade e segurança das informações armazenadas.
+- `Inserir Livros:` Permite a inclusão de livros seu autor, salvando no banco de dados.
+- `Atualizar informações:` Permite a atualização de informaçãoes já salvas antes no banco de dados, realizando a busca pelo ID.
+- `Excluir Livros:` Faz a exclusão de livros e seu autor da base de dados, através do ID.
+- `Buscar Livros:` Permite que o usuário faça a busca de livros já salvos na base de dados.
 
 ## Desenvolvedores 💻
 <a href="https://picasion.com/"><img src="https://i.picasion.com/pic92/546c2307c356cd9f4d6f6f6ac8ac4796.gif" width="150" height="150" border="0" alt="https://picasion.com/" /></a><br />
