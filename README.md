@@ -5,7 +5,7 @@ Este projeto visa oferecer aos usuários a funcionalidade de gerenciar uma bibli
 
 
 ### Funcionalidades Principais ⚙️
-- `Inserir Livros:` Permite a inclusão de livros seu autor, salvando no banco de dados.
+- `Inserir Livros:` Permite a inclusão de livros e seu autor, salvando no banco de dados.
 - `Atualizar informações:` Permite a atualização de informaçãoes já salvas antes no banco de dados, realizando a busca pelo ID.
 - `Excluir Livros:` Faz a exclusão de livros e seu autor da base de dados, através do ID.
 - `Buscar Livros:` Permite que o usuário faça a busca de livros já salvos na base de dados.
